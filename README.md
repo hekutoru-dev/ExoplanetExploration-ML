@@ -23,21 +23,25 @@ Once the dataset is cleaned and optimized for analysis, our next step is to Scal
 
 We can see that there a 3 labels that we want to classify: CANDIDATE, CONFIRMED & FALSE POSITIVE. Meaning that we need to discover how to predict new classifications in these 3 classes, for each new data coming up.
 
-### Tunning
+### SVM
+By itself, the SVM algorithm gave us a Training Data Score: 0.8995120463555962 and Testing Data Score: 0.8870082342177493. This values are nice fit. We cannot see over fitting nor underfitting. This parameters were given by having values of gamma = 1 and C = 40. <br><br>
 
-We used GridSearch and set the hyperparameters to generate candidates for the estimator and passed the parameters'C': [30, 32, 34, 36, 38, 40, 42, 44, 46, 48], and 'gamma': [1, 3, 5, 7, 10]}. By doing this we found that the best C = 42, and gamma = 1 for these parameters that we have tried. Also by looking at the confusion matrix we can see that there is a fine accuracy. Althoug there is a cosiderable amount of missings for the first classification when using the test data. Still, there is a good amount of success hits for all  3 classes. So, at these values for gamma & C is where the models seems to be stable.
+## GridSearch & Tunning
 
+After GridSearch and set the hyperparameters to generate candidates for the estimator and passed the parameters'C': [30, 32, 34, 36, 38, 40, 42, 44, 46, 48], and 'gamma': [1, 3, 5, 7, 10]}. By doing this we found that the best C = 42, and gamma = 1 for these parameters that we have tried. Also by looking at the confusion matrix we can see that there is a fine accuracy. Althoug there is a cosiderable amount of missings for the first classification when using the test data. Still, there is a good amount of success hits for all  3 classes. So, at these values for gamma & C is where the models seems to be stable.<br>
+At these level of gamma there is a great influence in what X features are doing.
+<br><br>
 
+### Logistic Regression Model
+The logistic regression model gives an accuracy of 0.84568 for the training data & 0.83714. This model it is also closer between training and test meaning we have a nice fit.
 
-### Evaluation
+### Comparison of Models
+As we can see, when using the SVM model we got a test score of 0.88700. After the GridSearch tunning we got that the best test score was 0.8824336688014639. There is not a big difference between these values, but it seems that the SVM alone is working a little beter.<br>
+Looking at both confusion matrixes we can see that there is a slightly difference in the first class (CANDIDATE label). It seems that there is better accuracy at hitting the positive values when using the GridSearch tunning than the SVM alone. <br><br>
 
+Comparing these models with the logistic regression model. The logistic regresion model a little worse, although there is not a big difference with the socres. It is cleary visible that the confusion matrix is showing bad behavior for the first class. <br><br>
 
-
-
-
-### Conclusions
-
-
+Aware from this. We can see that for the 3rd class, all models are working nice, as they are hitting most of the values as positive.
 
 
 
