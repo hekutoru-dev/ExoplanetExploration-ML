@@ -26,7 +26,7 @@ We can see that there a 3 labels that we want to classify: CANDIDATE, CONFIRMED 
 ### SVM
 By itself, the SVM algorithm gave us a Training Data Score: 0.8995120463555962 and Testing Data Score: 0.8870082342177493. This values are nice fit. We cannot see over fitting nor underfitting. This parameters were given by having values of gamma = 1 and C = 40. <br><br>
 
-## GridSearch & Tunning
+### GridSearch & Tunning
 
 After GridSearch and set the hyperparameters to generate candidates for the estimator and passed the parameters'C': [30, 32, 34, 36, 38, 40, 42, 44, 46, 48], and 'gamma': [1, 3, 5, 7, 10]}. By doing this we found that the best C = 42, and gamma = 1 for these parameters that we have tried. Also by looking at the confusion matrix we can see that there is a fine accuracy. Althoug there is a cosiderable amount of missings for the first classification when using the test data. Still, there is a good amount of success hits for all  3 classes. So, at these values for gamma & C is where the models seems to be stable.<br>
 At these level of gamma there is a great influence in what X features are doing.
