@@ -21,16 +21,11 @@ We scale the data using the MinMaxScaler to add robustness to a very small stand
 
 Once the dataset is cleaned and optimized for analysis, our next step is to Scale the data and create a SVC model and train it.
 
-
-
-
-
+We can see that there a 3 labels that we want to classify: CANDIDATE, CONFIRMED & FALSE POSITIVE. Meaning that we need to discover how to predict new classifications in these 3 classes, for each new data coming up.
 
 ### Tunning
 
-The GridSearch
-
-
+We used GridSearch and set the hyperparameters to generate candidates for the estimator and passed the parameters'C': [30, 32, 34, 36, 38, 40, 42, 44, 46, 48], and 'gamma': [1, 3, 5, 7, 10]}. By doing this we found that the best C = 42, and gamma = 1 for these parameters that we have tried. Also by looking at the confusion matrix we can see that there is a fine accuracy. Althoug there is a cosiderable amount of missings for the first classification when using the test data. Still, there is a good amount of success hits for all  3 classes. So, at these values for gamma & C is where the models seems to be stable.
 
 
 
